@@ -7,5 +7,5 @@ export default function Button (props) {
                 onClick={props.click}>
                 {props.children}
             </button>
-    )
+    )  
 }
