@@ -21,7 +21,7 @@ function CotizacionTerrestre() {
     const [tarifa, setTarifa] = useState([""])
     const [otrosGastos, setOtrosGastos] = useState([""])
     const [incluye, setIncluye] = useState([""])
-
+const [counter, setCounter] = useState({})
     const [calc, setCalc] = useState({})
 
     function handleEventChange(e) {
