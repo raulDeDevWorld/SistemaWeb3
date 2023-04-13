@@ -22,7 +22,7 @@ function CotizacionTerrestre() {
     const [otrosGastos, setOtrosGastos] = useState([""])
     const [incluye, setIncluye] = useState([""])
 
-    const [calc, setCalc] = useState({})
+    const [calc, setCalc] = useState({}). 
 
     function handleEventChange(e) {
         setUserPdfData({ ...pdfData, ...{ [e.target.name]: e.target.value } })
