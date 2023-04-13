@@ -215,7 +215,41 @@ function CotizacionTerrestre() {
                     <br />
 
                     
+                    <div className={style.subtitle}>DESCRPCION DE LA CARGA<span className={style.counterPluss} onClick={() => handlerCounter('pluss')}>+</span> <span className={style.counterLess} onClick={() => handlerCounter('less')}>-</span></div>
 
+                    <div className={`${style.containerFirstItems2} ${style.desktop}`}>
+                        <span>Nº</span>
+                        <span>ITEM</span>
+                        <span>DESCRIPCION</span>
+                        <span>MARCA Y/O PRESINTO</span>
+                        <span>CANT</span>
+                        <span>PESO (Kg)</span>
+                        <span>VOLUMEN (M3)</span>
+                        <span>DIRECCION DE ENTREGA</span>
+                    </div>
+                    {
+                        tarifa.map((i, index) => {
+                            return (
+                                <div className={`${style.inputs}`} key={index}>
+                                    <input type="text" placeholder="Nº" />
+                                    <input type="text" placeholder="ITEM" />
+                                    <input type="text" placeholder="DESCRIPCION" />
+                                    <input type="text" placeholder="MARCA Y/O PRESINTO" />
+                                    <input type="number" name={`CANTIDAD${index}`} onChange={(e) => handlerCalc(e, index)} placeholder="CANTIDAD" />
+                                    <input type="number" name={`PESO${index}`} onChange={(e) => handlerCalc(e, index)} placeholder="PESO (Kg)" />
+                                    <input type="number" name={`VOLUMEN${index}`} onChange={(e) => handlerCalc(e, index)} placeholder="VOLUMEN (M3)" />
+                                    <input type="text" placeholder="DIRECCION DE ENTREGA" />
+                                </div>
+                            )
+                        })
+                    }
+                    <div className={`${style.inputs}`} >
+                        <span className={style.total}>TOTAL</span>
+                        <span className={style.span}>{counter && counter.cantidad && counter.cantidad}</span>
+                        <span className={style.span}>{counter && counter.peso && counter.peso}</span>
+                        <span className={style.span}>{counter && counter.volumen && counter.volumen}</span>
+                    </div>
+                    <br />
   
 
                 </form>
